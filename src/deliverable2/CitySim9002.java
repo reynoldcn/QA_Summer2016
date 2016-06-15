@@ -5,13 +5,15 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class CitySim9002 {
+	//The types of visitors
 	public final static String[] visitors = 
 			new String[]{"Student", "Business", "Professor", "Blogger"};
+	//All locations visitors can reach
 	public final static String[] locations = 
 			new String[]{"The Cathedral of Learning", "Squirrel Hill", 
 						"The Point", "Downtown"};
 	LinkedList<Visitor> visitorlist = new LinkedList<Visitor>();
-	
+	//Visitors' ID, from 1 t0 5 as required. 
 	public static int VisitorID = 1;
 	
 	public boolean addVisitor(Visitor visitor){
@@ -24,7 +26,11 @@ public class CitySim9002 {
 	}
 	
 	
-	
+	/**
+	*Generate a specific visitor based on input
+	* @param type 0: student; 1: Business Person; 2: Professor; 3: Blogger
+	* 
+	*/
 	public Visitor generateVisitor(int type){
 		switch(type){
 		case 0:
@@ -42,11 +48,20 @@ public class CitySim9002 {
 	}
 	
 	
-	
+	/**
+	*Let the visitor go to one city
+	* @param visitor the visitor
+	* @param City the city visitor is going to
+	* @reutrn if the visitor can reach the city, return ture; If not, false
+	*/
 	public boolean visit(Visitor visitor, String City){
 		return visitor.visitCity(City);
 	}
-	
+	/**
+	*Go go go
+	*@param seed Useful in generating a random number
+	*@return how many times Loop runs
+	*/
 	public int run(int seed){
 		Random rand = new Random(seed);
 		Visitor visitor = null;
@@ -66,13 +81,21 @@ public class CitySim9002 {
 		}
 		return nVisitor;
 	}
-	
+	/**
+	*The commend should be one integer.
+	*@param commend
+	*@return 1, integer -> true; not 1, not integer -> false;
+	*/
 	public boolean commend(String[] args){
 		if(args.length == 1 && args[0].matches("[0-9]+"))
 			return true;
 		return false;
 	}
-	
+	/**
+	*Generate a random number useful in selecting visitor type randomly
+	* @param rand used to generate random value;
+	* @return a random number
+	*/
 	public int randomSelectType(Random rand){
 		return rand.nextInt(4);
 	}
