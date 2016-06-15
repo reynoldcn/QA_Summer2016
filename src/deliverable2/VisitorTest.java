@@ -27,6 +27,13 @@ public class VisitorTest {
 	}
 	
 	@Test
+	public void testBusiness(){
+		Visitor a = Mockito.mock(Visitor.class);
+		a = new Business(1);
+		assertEquals(a.type(), "Business");
+	}
+	
+	@Test
 	public void testVisitRight(){
 		Visitor a = new Student(1);
 		assertTrue(a.visitCity("The Cathedral of Learning"));
