@@ -55,4 +55,22 @@ public class VisitorTest {
 		Visitor a = new Student(1);
 		assertEquals(a.Id(), 1);
 	}
+	
+	@Test 
+	public void testPerference(){
+		Visitor stu = new Student(1);
+		Visitor bus = new Business(2);
+		Visitor blg = new Blogger(3);
+		Visitor prof = new Professor(4);
+		
+		assertFalse(stu.perference("none"));
+		assertFalse(bus.perference("none"));
+		assertFalse(blg.perference("none"));
+		assertFalse(prof.perference("none"));
+		
+		assertTrue(stu.perference("Downtown"));
+		assertTrue(bus.perference("Downtown"));
+		assertTrue(prof.perference("Downtown"));
+		assertFalse(blg.perference("Downtown"));
+	}
 }
