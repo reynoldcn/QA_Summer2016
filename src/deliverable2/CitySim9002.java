@@ -123,6 +123,12 @@ abstract class Visitor{
 	public String type(){
 		return this.type;
 	}
+	
+	public boolean perference(String City){
+		if(perference.containsKey(City))
+			return perference.get(City);
+		return false;
+	}
 }
 
 class Student extends Visitor{
