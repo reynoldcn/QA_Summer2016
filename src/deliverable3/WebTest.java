@@ -35,10 +35,6 @@ public class WebTest {
 	// "on_ident", "on_sp", "on_op", "on_int"
 	@Test
 	public void testTokenizeHas() {
-		
-		// Check that there is a remember-me element
-		// that contains the text "remember me"
-		// If it does not exist, or text is incorrect, fail test
 		System.out.println("contains on_sp, on_int?");
 		try {
 			driver.findElement(By.id("code_code")).sendKeys("a = 1");
@@ -63,10 +59,7 @@ public class WebTest {
 	// "on_int" and "on_sp"
 	@Test
 	public void testTokenizeNotHas() {
-		
-		// Check that there is a remember-me element
-		// that contains the text "remember me"
-		// If it does not exist, or text is incorrect, fail test
+
 		System.out.println("contains on_sp, on_int?");
 		try {
 			driver.findElement(By.id("code_code")).sendKeys("a=b");
@@ -247,4 +240,4 @@ public class WebTest {
 		}
 	}
 	
-}
+
