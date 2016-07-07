@@ -33,7 +33,7 @@ public class PropertyTest {
 	}
 	
 	//Property 1.
-	//The output array have one more
+	//The output array has one more
 	//element than input array	
 	@Test
 	public void testOutputSize(){
