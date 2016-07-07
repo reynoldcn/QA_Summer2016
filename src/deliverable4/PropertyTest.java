@@ -14,6 +14,11 @@ public class PropertyTest {
 		int sum = 0;
 		for(i = 0; i < x.length; i++){
 			output[i] = x[i] * x[i];
+			if(output[i] < 0){
+				output[i] = 0;
+				System.out.println("overflow after squared: x[" + i + "], " + x[i]
+						+ ". Modify it to 0");
+			}
 			sum += output[i];
 		}
 		
